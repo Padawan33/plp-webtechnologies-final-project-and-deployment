@@ -1,0 +1,489 @@
+/* ======================================================= */
+/* === 1. UNIVERSAL STYLES & CSS RESET === */
+/* ======================================================= */
+/* Applies a box-sizing model for consistent element sizing across browsers and removes default margins and paddings. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ======================================================= */
+/* === 2. CSS VARIABLES (COLOR PALETTE) === */
+/* ======================================================= */
+/* Defines custom properties (variables) for the color palette, making it easy to change colors site-wide. */
+:root {
+    --primary-color: #004080; /* A deep blue for branding and main headings */
+    --secondary-color: #20C997; /* A vibrant teal for accents and buttons */
+    --light-gray: #F8F9FA; /* A very light gray for background */
+    --white: #FFFFFF; /* Pure white */
+}
+
+/* ======================================================= */
+/* === 3. GLOBAL TYPOGRAPHY & BODY STYLING === */
+/* ======================================================= */
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-gray);
+    color: #333; /* A dark gray for good readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+/* ======================================================= */
+/* === 4. HEADER & NAVIGATION === */
+/* ======================================================= */
+/* Styles the top header, which contains the logo and navigation menu. */
+header {
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* ======================================================= */
+/* === 5. MAIN CONTENT & FOOTER === */
+/* ======================================================= */
+/* Styles the main content area for general page layouts. */
+main {
+    padding: 2rem;
+    min-height: 70vh; /* Ensures content area takes up most of the screen */
+}
+
+/* Styles the footer, which is consistent across all pages. */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* ======================================================= */
+/* === 6. HOME PAGE STYLES === */
+/* ======================================================= */
+/* Styles the hero banner on the homepage. */
+.hero {
+    background: linear-gradient(rgba(0, 64, 128, 0.7), rgba(0, 64, 128, 0.7)), url('https://i.ibb.co/T4Xf02q/pharmacy-exterior.jpg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 6rem 2rem;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ======================================================= */
+/* === 7. GENERAL PAGE SECTIONS & CARDS === */
+/* ======================================================= */
+/* General styling for section titles and layouts. */
+.featured-products, .popular-blogs {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.featured-products h2, .popular-blogs h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Styles the grid layout for product and blog cards. */
+.product-grid, .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+/* Styles the individual product and blog cards. */
+.product-card, .blog-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card:hover, .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img, .blog-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3, .blog-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* Styles the general button class. */
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #17a26f;
+}
+
+/* General page title styling. */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* ======================================================= */
+/* === 8. ABOUT US PAGE STYLES === */
+/* ======================================================= */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.video-container, .bio-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.video-container iframe {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ======================================================= */
+/* === 9. CONTACT US PAGE STYLES === */
+/* ======================================================= */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contact-info, .contact-form-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form label,
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.map-container {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 1100px;
+    height: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ======================================================= */
+/* === 10. PRODUCTS PAGE STYLES === */
+/* ======================================================= */
+.products-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Styles the filter and sorting controls on the products page. */
+.filters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+#search-bar {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#sort-by {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Styles the main product grid on the products page. */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Styles the shopping cart section. */
+.shopping-cart {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+}
+
+.shopping-cart h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.shopping-cart p {
+    text-align: right;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+#checkout-btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* ======================================================= */
+/* === 11. POP-UP MODALS & NOTIFICATIONS === */
+/* ======================================================= */
+/* Styles the notification that appears when an item is added to the cart. */
+.notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    z-index: 1000;
+}
+
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Styles the full-screen overlay for the checkout modal. */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Styles the checkout modal box itself. */
+.checkout-modal {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #888;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-cart-items {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+#modal-cart-list {
+    list-style: none;
+    padding: 0;
+}
+
+#modal-cart-list li {
+    margin-bottom: 0.5rem;
+}
+
+.modal-total {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+.discount-section {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+#discount-code {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.payment-methods h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.payment-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.payment-btn {
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    background-color: var(--white);
+    color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.show-modal {
+    display: flex;
+}
